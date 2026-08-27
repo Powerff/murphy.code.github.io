@@ -456,7 +456,6 @@ main,
 }
 
 .focus-list,
-.stance-list,
 .contact-list,
 .layers {
   list-style: none;
@@ -464,8 +463,15 @@ main,
   padding: 0;
 }
 
+.stance-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  counter-reset: stance;
+  max-width: 44rem;
+}
+
 .focus-list li,
-.stance-list li,
 .contact-list li {
   display: grid;
   gap: 0.3rem;
@@ -479,8 +485,7 @@ main,
   align-items: baseline;
 }
 
-.focus-list strong,
-.stance-list strong {
+.focus-list strong {
   font-family: var(--font-display);
   font-size: 1.05rem;
   font-weight: 700;
@@ -490,28 +495,61 @@ main,
   color: var(--ink-soft);
 }
 
-.stance-list {
-  counter-reset: stance;
-}
-
 .stance-list li {
   counter-increment: stance;
-  grid-template-columns: 2.4rem 1fr;
+  display: grid;
+  grid-template-columns: 2.75rem minmax(0, 1fr);
+  column-gap: 0.9rem;
+  row-gap: 0.4rem;
   align-items: start;
+  padding: 1.2rem 0;
+  border-bottom: 1px solid var(--line);
   color: var(--ink-soft);
 }
 
 .stance-list li::before {
   content: counter(stance, decimal-leading-zero);
+  grid-row: 1 / span 2;
+  padding-top: 0.18rem;
   font-family: var(--font-mono);
   color: var(--accent);
   font-weight: 600;
-  font-size: 0.85rem;
+  font-size: 0.82rem;
+  letter-spacing: 0.04em;
+  line-height: 1.2;
 }
 
 .stance-list li strong {
-  display: inline;
+  grid-column: 2;
+  display: block;
+  font-family: var(--font-display);
+  font-size: clamp(1.05rem, 0.95rem + 0.45vw, 1.2rem);
+  font-weight: 700;
   color: var(--ink);
+  letter-spacing: -0.02em;
+  line-height: 1.35;
+}
+
+.stance-list li .stance-note {
+  grid-column: 2;
+  max-width: 36rem;
+  font-size: 0.95rem;
+  line-height: 1.55;
+  color: var(--ink-soft);
+}
+
+.about-lead {
+  margin: 0 0 0.85rem;
+  font-family: var(--font-display);
+  font-size: clamp(1.15rem, 1rem + 0.7vw, 1.45rem);
+  font-weight: 700;
+  color: var(--ink);
+  letter-spacing: -0.02em;
+}
+
+.about-cn .prose + .prose,
+.about-cn .about-lead + .prose {
+  margin-top: 0;
 }
 
 .project {
