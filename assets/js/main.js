@@ -32,6 +32,62 @@
   }
 
   const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+  const revealNodes = document.querySelectorAll("[data-reveal]");
+  if (reduce) {
+    revealNodes.forEach((el) => el.classList.add("is-inview"));
+  } else if ("IntersectionObserver" in window) {
+    const io = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (!entry.isIntersecting) return;
+          entry.target.classList.add("is-inview");
+          io.unobserve(entry.target);
+        });
+      },
+      { threshold: 0.14, rootMargin: "0px 0px -8% 0px" },
+    );
+    revealNodes.forEach((el) => io.observe(el));
+  } else {
+    revealNodes.forEach((el) => el.classList.add("is-inview"));
+  }
+
+  const typeTarget = document.querySelector("[data-typewriter]");
+  if (typeTarget) {
+    const full = typeTarget.getAttribute("data-typewriter") || "";
+    if (reduce) {
+      typeTarget.textContent = full;
+    } else {
+      let i = 0;
+      const tick = () => {
+        i += 1;
+        typeTarget.textContent = full.slice(0, i);
+        if (i < full.length) window.setTimeout(tick, 28 + (i % 5) * 6);
+      };
+      const about = document.getElementById("about");
+      const start = () => {
+        if (typeTarget.dataset.started === "1") return;
+        typeTarget.dataset.started = "1";
+        tick();
+      };
+      if (about && "IntersectionObserver" in window) {
+        const tio = new IntersectionObserver(
+          (entries) => {
+            entries.forEach((entry) => {
+              if (!entry.isIntersecting) return;
+              start();
+              tio.disconnect();
+            });
+          },
+          { threshold: 0.35 },
+        );
+        tio.observe(about);
+      } else {
+        start();
+      }
+    }
+  }
+
   if (reduce) return;
 
   const hero = document.querySelector(".hero");

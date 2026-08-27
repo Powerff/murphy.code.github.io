@@ -426,9 +426,35 @@ main,
 .section {
   padding: clamp(2.4rem, 5vw, 3.8rem) 0 0.6rem;
   border-top: 1px solid var(--line);
-  animation: rise 0.75s ease both;
-  animation-timeline: view();
-  animation-range: entry 8% cover 28%;
+}
+
+[data-reveal] {
+  opacity: 0;
+  transform: translateY(22px);
+  transition:
+    opacity 0.75s cubic-bezier(0.22, 1, 0.36, 1),
+    transform 0.75s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+[data-reveal].is-inview {
+  opacity: 1;
+  transform: none;
+}
+
+[data-reveal].is-inview .about-meta > div {
+  animation: rise 0.55s ease both;
+}
+
+[data-reveal].is-inview .about-meta > div:nth-child(1) {
+  animation-delay: 0.08s;
+}
+
+[data-reveal].is-inview .about-meta > div:nth-child(2) {
+  animation-delay: 0.16s;
+}
+
+[data-reveal].is-inview .about-meta > div:nth-child(3) {
+  animation-delay: 0.24s;
 }
 
 .sec-id {
@@ -659,6 +685,130 @@ main,
   color: var(--ink-soft);
 }
 
+.about-panel {
+  position: relative;
+  max-width: 46rem;
+  padding: 1.25rem 1.25rem 1.25rem 1.35rem;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: linear-gradient(160deg, var(--panel-strong), var(--panel));
+  overflow: hidden;
+}
+
+.about-panel::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 3px;
+  background: linear-gradient(180deg, var(--accent-2), var(--accent), transparent);
+  animation: about-rail 3.8s ease-in-out infinite;
+}
+
+.about-panel-shine {
+  pointer-events: none;
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    115deg,
+    transparent 30%,
+    color-mix(in srgb, var(--accent-2) 14%, transparent) 48%,
+    transparent 62%
+  );
+  transform: translateX(-120%);
+  animation: about-shine 5.5s ease-in-out infinite;
+}
+
+.about-role {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.55rem 0.7rem;
+  margin: 0 0 0.95rem;
+  font-family: var(--font-display);
+  font-size: clamp(1.1rem, 1rem + 0.55vw, 1.35rem);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  color: var(--ink);
+}
+
+.about-role-label {
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--accent-2);
+  border: 1px solid var(--line);
+  border-radius: 0.25rem;
+  padding: 0.18rem 0.4rem;
+}
+
+.about-role-text:empty::before {
+  content: "\00a0";
+}
+
+.caret {
+  display: inline-block;
+  width: 0.55rem;
+  height: 1.05em;
+  margin-left: 0.1rem;
+  background: var(--accent);
+  animation: caret-blink 1s steps(1) infinite;
+  vertical-align: text-bottom;
+}
+
+.about-panel .prose {
+  margin: 0 0 1.15rem;
+  position: relative;
+  z-index: 1;
+}
+
+.about-meta {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  gap: 0.75rem;
+  margin: 0;
+}
+
+.about-meta > div {
+  display: grid;
+  grid-template-columns: minmax(6.5rem, 8rem) 1fr;
+  gap: 0.55rem 1rem;
+  padding: 0.65rem 0 0;
+  border-top: 1px dashed var(--line);
+  align-items: baseline;
+}
+
+.about-meta dt {
+  margin: 0;
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--accent-2);
+}
+
+.about-meta dd {
+  margin: 0;
+  color: var(--ink-soft);
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
+.about-meta a {
+  color: var(--accent-2);
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.about-meta a:hover {
+  text-decoration: underline;
+}
+
 .contact-list {
   max-width: 36rem;
   margin-bottom: 1.35rem;
@@ -780,9 +930,34 @@ main,
   }
 }
 
-@supports not (animation-timeline: view()) {
-  .section {
-    animation: none;
+@keyframes caret-blink {
+  0%,
+  45% {
+    opacity: 1;
+  }
+  50%,
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes about-shine {
+  0%,
+  55% {
+    transform: translateX(-120%);
+  }
+  75%,
+  100% {
+    transform: translateX(120%);
+  }
+}
+
+@keyframes about-rail {
+  0%,
+  100% {
+    opacity: 0.55;
+  }
+  50% {
     opacity: 1;
   }
 }
@@ -792,8 +967,17 @@ main,
   .orb,
   .pulse,
   .hero,
-  .section {
+  .about-panel::before,
+  .about-panel-shine,
+  .caret,
+  [data-reveal].is-inview .about-meta > div {
     animation: none !important;
+  }
+
+  [data-reveal] {
+    opacity: 1;
+    transform: none;
+    transition: none;
   }
 }
 
