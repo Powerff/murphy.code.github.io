@@ -568,6 +568,12 @@ main,
   padding: 0.6rem 0 0.3rem;
 }
 
+.project + .project {
+  margin-top: 2rem;
+  padding-top: 1.6rem;
+  border-top: 1px dashed var(--line);
+}
+
 .eyebrow {
   margin: 0 0 0.45rem;
   color: var(--accent);
@@ -987,6 +993,11 @@ main,
   }
 
   .focus-list li {
+    grid-template-columns: 1fr;
+    gap: 0.25rem;
+  }
+
+  .about-meta > div {
     grid-template-columns: 1fr;
     gap: 0.25rem;
   }
