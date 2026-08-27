@@ -3,6 +3,9 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="color-scheme" content="light dark" />
+    <meta name="theme-color" content="#0a1620" media="(prefers-color-scheme: dark)" />
+    <meta name="theme-color" content="#e8f4f8" media="(prefers-color-scheme: light)" />
     <title>murphy · Powerff — Full-stack & AI Engineering</title>
     <meta
       name="description"
@@ -30,6 +33,7 @@
       <div class="scan"></div>
       <div class="orb orb-a"></div>
       <div class="orb orb-b"></div>
+      <div class="orb orb-c"></div>
     </div>
 
     <header class="site-header">
@@ -38,10 +42,20 @@
         <span class="pulse"></span>
         <span>SYS · ONLINE</span>
       </div>
-      <nav class="nav" aria-label="Primary">
+      <button
+        class="nav-toggle"
+        type="button"
+        aria-expanded="false"
+        aria-controls="site-nav"
+        aria-label="打开导航"
+      >
+        <span></span><span></span><span></span>
+      </button>
+      <nav class="nav" id="site-nav" aria-label="Primary">
         <a href="#focus">Focus</a>
         <a href="#work">Work</a>
         <a href="#stance">Stance</a>
+        <a href="#about">About</a>
         <a href="#contact">Contact</a>
       </nav>
     </header>
@@ -74,7 +88,7 @@
           </div>
           <div>
             <dt>models</dt>
-            <dd>GPT··Claude··Gemini··DeepSeek</dd>
+            <dd>GPT · Claude · Gemini · DeepSeek</dd>
           </div>
           <div>
             <dt>policy</dt>
@@ -209,7 +223,7 @@
           <a href="https://powerff.github.io/">https://powerff.github.io/</a>
         </p>
       </div>
-      <a href="#top">Back to top</a>
+      <a class="to-top" href="#top">Back to top</a>
     </footer>
 
     <script src="./assets/js/main.js" defer></script>
