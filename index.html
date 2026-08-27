@@ -19,16 +19,25 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700&family=Manrope:wght@400;500;600;700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap"
       rel="stylesheet"
     />
     <link rel="stylesheet" href="./assets/css/style.css" />
   </head>
   <body>
-    <div class="atmosphere" aria-hidden="true"></div>
+    <div class="atmosphere" aria-hidden="true">
+      <div class="grid"></div>
+      <div class="scan"></div>
+      <div class="orb orb-a"></div>
+      <div class="orb orb-b"></div>
+    </div>
 
     <header class="site-header">
       <a class="brand" href="./">murphy<span>.</span>code</a>
+      <div class="sys-status" aria-hidden="true">
+        <span class="pulse"></span>
+        <span>SYS · ONLINE</span>
+      </div>
       <nav class="nav" aria-label="Primary">
         <a href="#focus">Focus</a>
         <a href="#work">Work</a>
@@ -39,6 +48,15 @@
 
     <main>
       <section class="hero" id="top">
+        <div class="frame" aria-hidden="true">
+          <span class="c tl"></span><span class="c tr"></span>
+          <span class="c bl"></span><span class="c br"></span>
+        </div>
+        <p class="meta-line">
+          <span>NODE / POWERFF</span>
+          <span>STACK / FULL</span>
+          <span>MODE / SHIP</span>
+        </p>
         <p class="brand-hero">murphy · Powerff</p>
         <h1>把能上线的工程判断，做成可复用的技能。</h1>
         <p class="lede">
@@ -49,10 +67,25 @@
           <a class="btn btn-primary" href="https://github.com/Powerff/eng-code-skills">eng-code-skills</a>
           <a class="btn btn-ghost" href="https://github.com/Powerff">GitHub</a>
         </div>
+        <dl class="telemetry">
+          <div>
+            <dt>skills</dt>
+            <dd>24</dd>
+          </div>
+          <div>
+            <dt>models</dt>
+            <dd>GPT··Claude··Gemini··DeepSeek</dd>
+          </div>
+          <div>
+            <dt>policy</dt>
+            <dd>verify-before-merge</dd>
+          </div>
+        </dl>
       </section>
 
       <section class="section" id="focus">
         <div class="section-head">
+          <p class="sec-id">01 // FOCUS</p>
           <h2>Focus</h2>
           <p>优化交付质量与失败模式，而不是堆演示。</p>
         </div>
@@ -82,6 +115,7 @@
 
       <section class="section work" id="work">
         <div class="section-head">
+          <p class="sec-id">02 // WORK</p>
           <h2>Selected work</h2>
           <p>开源工程技能套件，按需安装、模型无关。</p>
         </div>
@@ -99,12 +133,19 @@
             <li><span>Backend</span> 分析 + API 分层 + 交付闭环</li>
             <li><span>Frontend</span> Hooks 检查 · 组件审计 · 项目迁移</li>
           </ul>
-          <pre class="code"><code>npx agentskills load github:Powerff/eng-code-skills#skills/backend-implement-verify-commit</code></pre>
+          <div class="terminal">
+            <div class="terminal-bar">
+              <span></span><span></span><span></span>
+              <em>shell · load skill</em>
+            </div>
+            <pre class="code"><code><span class="prompt">$</span> npx agentskills load github:Powerff/eng-code-skills#skills/backend-implement-verify-commit</code></pre>
+          </div>
         </article>
       </section>
 
       <section class="section" id="stance">
         <div class="section-head">
+          <p class="sec-id">03 // STANCE</p>
           <h2>Engineering stance</h2>
           <p>原则先于提示词。</p>
         </div>
@@ -119,6 +160,7 @@
 
       <section class="section about-cn" id="about">
         <div class="section-head">
+          <p class="sec-id">04 // ABOUT</p>
           <h2>中文简介</h2>
           <p>你好，我是 murphy（Powerff）。</p>
         </div>
@@ -134,6 +176,7 @@
 
       <section class="section contact" id="contact">
         <div class="section-head">
+          <p class="sec-id">05 // CONTACT</p>
           <h2>Contact</h2>
           <p>欢迎交流工程落地与 AI 协作边界。</p>
         </div>
@@ -159,7 +202,15 @@
     </main>
 
     <footer class="site-footer">
-      <p>© <span id="year"></span> murphy · Powerff · MIT where applicable</p>
+      <div>
+        <p>© <span id="year"></span> murphy · Powerff · MIT where applicable</p>
+        <p class="url-note">
+          站点品牌是 <strong>murphy.code</strong>。当前地址偏长，是因为 GitHub Pages 项目页格式为
+          <code>用户名.github.io/仓库名/</code>，而仓库名写成了
+          <code>murphy.code.github.io</code>。若要短链，可改用用户站仓库
+          <code>Powerff.github.io</code> → <code>https://powerff.github.io/</code>。
+        </p>
+      </div>
       <a href="#top">Back to top</a>
     </footer>
 

@@ -4,9 +4,20 @@ Personal site for **murphy · Powerff**, published via GitHub Pages:
 
 **https://powerff.github.io/murphy.code.github.io/**
 
-## Local preview
+## Why is the URL long?
 
-Open `index.html` in a browser, or:
+GitHub Pages has two URL patterns:
+
+| Type | Repo name | Live URL |
+| --- | --- | --- |
+| **User site** | `Powerff.github.io` | `https://powerff.github.io/` |
+| **Project site** (current) | any repo, e.g. `murphy.code.github.io` | `https://powerff.github.io/<repo>/` |
+
+This repo is a **project site**, so the path includes the repository name. Naming the repo `murphy.code.github.io` made the path look duplicated and long. The **brand** is still `murphy.code`; the long string is just the Pages path.
+
+To shorten later: create/rename to user-site repo `Powerff.github.io` (root URL), or rename this repo to something short like `site` → `https://powerff.github.io/site/`.
+
+## Local preview
 
 ```bash
 python3 -m http.server 8080
@@ -16,8 +27,8 @@ python3 -m http.server 8080
 ## Contents
 
 - `index.html` — homepage
-- `assets/css/style.css` — layout & atmosphere
-- `assets/js/main.js` — light motion
-- `.nojekyll` — serve static files as-is on GitHub Pages
+- `assets/css/style.css` — tech-forward layout
+- `assets/js/main.js` — motion
+- `.nojekyll` — static GitHub Pages
 
-Aligned with the GitHub profile narrative and [eng-code-skills](https://github.com/Powerff/eng-code-skills).
+Aligned with [eng-code-skills](https://github.com/Powerff/eng-code-skills) and the GitHub profile narrative.
