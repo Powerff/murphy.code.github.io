@@ -664,16 +664,6 @@ main,
   text-decoration: underline;
 }
 
-.handle-note {
-  grid-column: 2;
-  margin: 0.15rem 0 0;
-  font-style: normal;
-  font-family: var(--font-mono);
-  font-size: 0.72rem;
-  color: var(--ink-soft);
-  letter-spacing: 0.02em;
-}
-
 .quote {
   margin: 0;
   max-width: 40rem;
