@@ -1,22 +1,21 @@
 # murphy.code
 
-Personal site for **murphy · Powerff**.
+Personal site for **murphy** (GitHub account: [Powerff](https://github.com/Powerff)).
 
-**Short URL:** https://powerff.github.io/
+**Live:** https://powerff.github.io/
 
-This repository is the GitHub **user site** (`Powerff.github.io`), so Pages publishes at the account root — no extra path segment.
+## Why not murphy.github.io?
+
+GitHub Pages user URLs are `https://<username>.github.io/`.  
+The username [`murphy`](https://github.com/murphy) is already taken by another account, so this site must stay under `Powerff` → `https://powerff.github.io/`.
+
+Alternatives if a shorter/custom brand URL is required later:
+
+1. Rename the GitHub account to an **available** handle (e.g. check candidates first), then use that `.github.io`
+2. Buy a custom domain (e.g. `murphy.code`) and bind it in Pages settings
 
 ## Local preview
 
 ```bash
 python3 -m http.server 8080
-# visit http://localhost:8080
 ```
-
-## Contents
-
-- `index.html` — homepage
-- `assets/` — styles & motion
-- `.nojekyll` — static GitHub Pages
-
-See also [eng-code-skills](https://github.com/Powerff/eng-code-skills).
