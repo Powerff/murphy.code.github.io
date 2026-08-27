@@ -574,6 +574,87 @@ main,
   border-top: 1px dashed var(--line);
 }
 
+.skill-modes {
+  margin-top: 2.2rem;
+  padding: 1.2rem 1.25rem 1.3rem;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: linear-gradient(160deg, var(--panel-strong), var(--panel));
+  max-width: 46rem;
+}
+
+.skill-modes-title {
+  margin: 0.2rem 0 1rem;
+  font-family: var(--font-display);
+  font-size: clamp(1.15rem, 1rem + 0.6vw, 1.4rem);
+  letter-spacing: -0.02em;
+}
+
+.skill-modes-list {
+  margin-bottom: 0.85rem;
+}
+
+.skill-modes-note {
+  margin: 0;
+  font-size: 0.92rem;
+}
+
+.skill-modes-note a {
+  color: var(--accent-2);
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.skill-modes-note a:hover {
+  text-decoration: underline;
+}
+
+.skill-modes code {
+  font-family: var(--font-mono);
+  font-size: 0.82em;
+  color: var(--accent-2);
+}
+
+.skill-modes {
+  margin-top: 2.2rem;
+  padding: 1.2rem 1.25rem 1.25rem;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: linear-gradient(160deg, var(--panel-strong), var(--panel));
+}
+
+.skill-modes-title {
+  margin: 0.15rem 0 1rem;
+  font-family: var(--font-display);
+  font-size: clamp(1.15rem, 1rem + 0.6vw, 1.45rem);
+  letter-spacing: -0.02em;
+}
+
+.skill-modes-list {
+  margin-bottom: 0.85rem;
+}
+
+.skill-modes-note {
+  margin: 0;
+  font-size: 0.92rem;
+}
+
+.skill-modes-note a {
+  color: var(--accent-2);
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.skill-modes-note a:hover {
+  text-decoration: underline;
+}
+
+.skill-modes code {
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  color: var(--accent-2);
+}
+
 .eyebrow {
   margin: 0 0 0.45rem;
   color: var(--accent);
