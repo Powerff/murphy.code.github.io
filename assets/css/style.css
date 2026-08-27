@@ -538,20 +538,6 @@ main,
   color: var(--ink-soft);
 }
 
-.about-lead {
-  margin: 0 0 0.85rem;
-  font-family: var(--font-display);
-  font-size: clamp(1.15rem, 1rem + 0.7vw, 1.45rem);
-  font-weight: 700;
-  color: var(--ink);
-  letter-spacing: -0.02em;
-}
-
-.about-cn .prose + .prose,
-.about-cn .about-lead + .prose {
-  margin-top: 0;
-}
-
 .project {
   padding: 0.6rem 0 0.3rem;
 }
