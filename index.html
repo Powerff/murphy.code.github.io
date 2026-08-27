@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>murphy · Powerff — Full-stack & AI Engineering</title>
+    <meta
+      name="description"
+      content="murphy（Powerff）：全栈工程师。交付可靠系统，并把工程判断沉淀为可复用的 Agent Skills。"
+    />
+    <meta property="og:title" content="murphy · Powerff" />
+    <meta
+      property="og:description"
+      content="Full-stack engineer · production delivery · practical AI-assisted engineering"
+    />
+    <meta property="og:url" content="https://powerff.github.io/murphy.code.github.io/" />
+    <meta property="og:type" content="website" />
+    <link rel="canonical" href="https://powerff.github.io/murphy.code.github.io/" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700&family=Manrope:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./assets/css/style.css" />
+  </head>
+  <body>
+    <div class="atmosphere" aria-hidden="true"></div>
+
+    <header class="site-header">
+      <a class="brand" href="./">murphy<span>.</span>code</a>
+      <nav class="nav" aria-label="Primary">
+        <a href="#focus">Focus</a>
+        <a href="#work">Work</a>
+        <a href="#stance">Stance</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="hero" id="top">
+        <p class="brand-hero">murphy · Powerff</p>
+        <h1>把能上线的工程判断，做成可复用的技能。</h1>
+        <p class="lede">
+          Full-stack engineer。在真实工期与遗留约束下交付系统，并把规范、评审、重构、验证沉淀为
+          Agent Skills — 给 Cursor、Claude Code，以及任何主流编码大模型使用。
+        </p>
+        <div class="cta-row">
+          <a class="btn btn-primary" href="https://github.com/Powerff/eng-code-skills">eng-code-skills</a>
+          <a class="btn btn-ghost" href="https://github.com/Powerff">GitHub</a>
+        </div>
+      </section>
+
+      <section class="section" id="focus">
+        <div class="section-head">
+          <h2>Focus</h2>
+          <p>优化交付质量与失败模式，而不是堆演示。</p>
+        </div>
+        <ul class="focus-list">
+          <li>
+            <strong>Delivery</strong>
+            <span>清晰范围、最小有效 diff、先验证后合入</span>
+          </li>
+          <li>
+            <strong>Code quality</strong>
+            <span>结构与可读性提升，禁止静默篡改业务语义</span>
+          </li>
+          <li>
+            <strong>Backend</strong>
+            <span>契约、事务、并发、资源生命周期、DTO/VO/Entity 分层</span>
+          </li>
+          <li>
+            <strong>Frontend</strong>
+            <span>状态归属、Hooks/副作用、渲染成本、交互正确性</span>
+          </li>
+          <li>
+            <strong>AI × Engineering</strong>
+            <span>可移植 Skills、分阶段流程、不可逆决策的人工闸门</span>
+          </li>
+        </ul>
+      </section>
+
+      <section class="section work" id="work">
+        <div class="section-head">
+          <h2>Selected work</h2>
+          <p>开源工程技能套件，按需安装、模型无关。</p>
+        </div>
+        <article class="project">
+          <p class="eyebrow">Open source · MIT · v0.2</p>
+          <h3>
+            <a href="https://github.com/Powerff/eng-code-skills">eng-code-skills</a>
+          </h3>
+          <p>
+            24 个自包含 Agent Skills：通用 / 后端分析 / 后端工作流 / 前端专项。
+            兼容 GPT、Claude、Gemini、DeepSeek、Qwen、Kimi、Grok 等主流模型，以及 Cursor、Claude Code、ChatGPT、Copilot、Continue、Cline 等宿主。
+          </p>
+          <ul class="layers">
+            <li><span>General</span> style · refactor · debt · review</li>
+            <li><span>Backend</span> 分析 + API 分层 + 交付闭环</li>
+            <li><span>Frontend</span> Hooks 检查 · 组件审计 · 项目迁移</li>
+          </ul>
+          <pre class="code"><code>npx agentskills load github:Powerff/eng-code-skills#skills/backend-implement-verify-commit</code></pre>
+        </article>
+      </section>
+
+      <section class="section" id="stance">
+        <div class="section-head">
+          <h2>Engineering stance</h2>
+          <p>原则先于提示词。</p>
+        </div>
+        <ol class="stance-list">
+          <li><strong>AI 加速，人负责上线。</strong> 产出在评审与测试前只是建议。</li>
+          <li><strong>重构 ≠ 搬运代码。</strong> 成本在恢复调用链、状态机与隐含规则。</li>
+          <li><strong>流程优于一次性神 Prompt。</strong> 分阶段、可回滚、有成本上限。</li>
+          <li><strong>领域失败模式不同。</strong> 后端一致性 / 前端状态与副作用需要不同清单。</li>
+          <li><strong>证据优于感觉。</strong> 日志、diff、构建与可复现路径优先。</li>
+        </ol>
+      </section>
+
+      <section class="section about-cn" id="about">
+        <div class="section-head">
+          <h2>中文简介</h2>
+          <p>你好，我是 murphy（Powerff）。</p>
+        </div>
+        <p class="prose">
+          全栈工程师，长期在真实交付约束下做工程落地；持续把「会审代码的人」沉淀成可安装工具，
+          让团队用同一套标准驱动 AI 协作，而不是每次从零口述规则。
+        </p>
+        <p class="prose">
+          默认约束：不静默改业务语义；每次输出必须带风险警告与人工校验点；大型重构走
+          「链路分析 → 方案审查 → 编码 → CR → 测试闭环」。
+        </p>
+      </section>
+
+      <section class="section contact" id="contact">
+        <div class="section-head">
+          <h2>Contact</h2>
+          <p>欢迎交流工程落地与 AI 协作边界。</p>
+        </div>
+        <ul class="contact-list">
+          <li>
+            <span>GitHub</span>
+            <a href="https://github.com/Powerff">@Powerff</a>
+          </li>
+          <li>
+            <span>Open source</span>
+            <a href="https://github.com/Powerff/eng-code-skills">eng-code-skills</a>
+          </li>
+          <li>
+            <span>Profile</span>
+            <a href="https://github.com/Powerff/Powerff">github.com/Powerff</a>
+          </li>
+        </ul>
+        <blockquote class="quote">
+          Ship reliable software, and encode hard-won engineering judgment into tools
+          others can run — with boundaries, verification, and clear ownership of risk.
+        </blockquote>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <p>© <span id="year"></span> murphy · Powerff · MIT where applicable</p>
+      <a href="#top">Back to top</a>
+    </footer>
+
+    <script src="./assets/js/main.js" defer></script>
+  </body>
+</html>
